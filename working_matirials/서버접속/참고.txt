@@ -7,3 +7,29 @@
 
 2. 로그 :
  /home/ec2-user/app/step1/nohup.out
+
+3. DB 접속 :
+ AWS주소:3306/AGENCY
+ AGENT1 / 1234
+
+ application-real.properties
+ -------------------------------
+spring.profiles.include=oauth,real-db
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL5Dialect
+spring.jpa.show_sql=true
+spring.session.store-type=jdbc
+server.port=18080
+
+ application-real-db.properties
+ -------------------------------
+spring.jpa.hibernate.ddl-auto=none
+spring.datasource.url=jdbc:mariadb://10.0.1.232:3306/AGENCY
+spring.datasource.username=AGENT1
+spring.datasource.password=1234
+spring.datasource.driver-class-name=org.mariadb.jdbc.Driver
+
+4. spring boot 실행
+
+JVM_OPTION="-Dspring.config.location=classpath:/application.properties,/home/ec2-user/app/step1/application-real-db.properties,/home/ec2-user/app/step1/application-oauth.properties -Dspring.profiles.active=real"
+nohup java -jar ${JVM_OPTION} $REPOSITORY/libs/$JAR_NAME 2>&1 &
+
