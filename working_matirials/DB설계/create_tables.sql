@@ -1,0 +1,37 @@
+DROP TABLE IF EXISTS 'AG_PARTNER';
+
+CREATE TABLE 'AG_PARTNER' (
+	'ID'	varchar(64)	NOT NULL,
+	'EMAIL'	varchar(128)	NULL,
+	'PASSWORD'	varchar(256)	NULL,
+	'NAME'	varchar(64)	NULL,
+	'MOBILE'	varchar(32)	NULL,
+	'PHONE'	varchar(32)	NULL,
+	'FAX'	varchar(32)	NULL,
+	'ADDR1_1'	varchar(32)	NULL,
+	'ADDR1_2'	varchar(64)	NULL,
+	'ADDR1_3'	varchar(256)	NULL,
+	'ADDR2_1'	varchar(32)	NULL,
+	'ADDR2_2'	varchar(64)	NULL,
+	'ADDR3_1'	varchar(32)	NULL,
+	'ADDR3_2'	varchar(64)	NULL,
+	'LICENSE'	varchar(256)	NULL
+);
+
+DROP TABLE IF EXISTS 'AG_USER';
+
+CREATE TABLE 'AG_USER' (
+	'ID'	varchar(64)	NOT NULL,
+	'PASSWORD'	varchar(256)	NULL,
+	'NAME'	varchar(64)	NOT NULL,
+	'EMAIL'	varchar(128)	NULL,
+	'MOBILE'	varchar(32)	NULL
+);
+
+ALTER TABLE 'AG_PARTNER' ADD CONSTRAINT 'PK_AG_PARTNER' PRIMARY KEY (
+	'ID'
+);
+
+ALTER TABLE 'AG_USER' ADD CONSTRAINT 'PK_AG_USER' PRIMARY KEY (
+	'ID'
+);
