@@ -4,14 +4,13 @@ import com.agencyplatform.springboot.domain.RegModTimeEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.CreatedDate;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
 
 @Getter
 @NoArgsConstructor
 @Entity
+@Table(name="AG_LAW_OBJ")
 public class Obj extends RegModTimeEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

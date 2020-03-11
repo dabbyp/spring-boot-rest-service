@@ -21,16 +21,16 @@ public class ObjRepositoryTest {
     @Autowired
     ObjRepository objRepository;
 
-    @After
-    public void cleanup(){
-        objRepository.deleteAll();
-    }
+//    @After
+//    public void cleanup(){
+//        objRepository.deleteAll();
+//    }
 
     @Test
     public void obj_jpa_test() throws Exception {
 
         objRepository.save(Obj.builder()
-                .id(new Long(1234L))
+                .id(new Long(1L))
                 .kind("1234556")
                 .amount(new Long(1000000L))
                 .addr_1("Seoul")

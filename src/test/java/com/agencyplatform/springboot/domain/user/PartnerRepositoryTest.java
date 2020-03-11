@@ -17,10 +17,10 @@ public class PartnerRepositoryTest {
     @Autowired
     PartnerRepository partnerRepository;
 
-    @After
-    public void cleanup(){
-        partnerRepository.deleteAll();
-    }
+//    @After
+//    public void cleanup(){
+//        partnerRepository.deleteAll();
+//    }
 
     @Test
     public void partner_jpa_test() throws Exception {
@@ -28,7 +28,7 @@ public class PartnerRepositoryTest {
 
         partnerRepository.save(Partner.builder()
                 .compnum("12345")
-                .id(new Long(123454L))
+                .id(new Long(1L))
                 .password("124")
                 .name("name")
                 .email("email")

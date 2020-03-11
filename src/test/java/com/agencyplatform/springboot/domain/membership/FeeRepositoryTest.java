@@ -19,10 +19,10 @@ public class FeeRepositoryTest {
     @Autowired
     FeeRepository feeRepository;
 
-    @After
-    public void cleanup(){
-        feeRepository.deleteAll();
-    }
+//    @After
+//    public void cleanup(){
+//        feeRepository.deleteAll();
+//    }
 
     @Test
     public void fee_jpa_test() throws Exception {

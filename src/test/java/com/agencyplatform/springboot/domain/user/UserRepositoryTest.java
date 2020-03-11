@@ -18,10 +18,10 @@ public class UserRepositoryTest {
     @Autowired
     UserRepository userRepository;
 
-    @After
-    public void cleanup(){
-        userRepository.deleteAll();
-    }
+//    @After
+//    public void cleanup(){
+//        userRepository.deleteAll();
+//    }
 
     @Test
     public void user_jpa_test() throws Exception {

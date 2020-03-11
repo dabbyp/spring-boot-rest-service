@@ -12,6 +12,7 @@ import javax.persistence.*;
 @Getter
 @NoArgsConstructor
 @Entity
+@Table(name="AG_LAW_LOG")
 public class Log extends RegTimeEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

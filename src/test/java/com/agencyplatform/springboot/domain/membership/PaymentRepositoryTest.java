@@ -18,17 +18,17 @@ public class PaymentRepositoryTest {
     @Autowired
     PaymentRepository paymentRepository;
 
-    @After
-    public void cleanup(){
-        paymentRepository.deleteAll();
-    }
+//    @After
+//    public void cleanup(){
+//        paymentRepository.deleteAll();
+//    }
 
     @Test
     public void payment_jpa_test() throws Exception {
         paymentRepository.save(Payment.builder()
-                .compnum("1234")
+                .compnum("12345")
                 .classify_t("Basic")
-                .classify_m("2")
+                .classify_m("3")
                 .term(12)
                 .pay_g(1)
                 .amount(new Long(1000000L))
@@ -40,6 +40,6 @@ public class PaymentRepositoryTest {
         Payment payment = payList.get(0);
 
         assertThat(payment.getClassify_t()).isEqualTo("Basic");
-        assertThat(payment.getClassify_m()).isEqualTo("2");
+        assertThat(payment.getClassify_m()).isEqualTo("3");
     }
 }

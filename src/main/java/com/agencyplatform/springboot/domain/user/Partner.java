@@ -4,13 +4,13 @@ import com.agencyplatform.springboot.domain.RegModTimeEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
 
 import javax.persistence.*;
 
 @Getter
 @NoArgsConstructor
 @Entity
+@Table(name="AG_LAW_PARTNER")
 public class Partner extends RegModTimeEntity {
     @Id
     @Column(nullable = false)

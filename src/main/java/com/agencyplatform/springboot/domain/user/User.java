@@ -10,6 +10,7 @@ import javax.persistence.*;
 @Getter
 @NoArgsConstructor
 @Entity
+@Table(name="AG_USER")
 public class User extends RegModTimeEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

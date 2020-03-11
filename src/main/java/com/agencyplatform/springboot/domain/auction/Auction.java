@@ -7,11 +7,11 @@ import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
 
 @Getter
 @NoArgsConstructor
 @Entity
+@Table(name="AG_LAW_AUCTION")
 public class Auction extends RegModTimeEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

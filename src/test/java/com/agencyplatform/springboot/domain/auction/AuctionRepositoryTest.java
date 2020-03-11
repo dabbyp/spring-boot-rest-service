@@ -18,19 +18,19 @@ public class AuctionRepositoryTest {
     @Autowired
     AuctionRepository auctionRepository;
 
-    @After
-    public void cleanup(){
-        auctionRepository.deleteAll();
-    }
+//    @After
+//    public void cleanup(){
+//        auctionRepository.deleteAll();
+//    }
 
     @Test
     public void auction_jpa_test() throws Exception {
 
         auctionRepository.save(Auction.builder()
                 .compnum("12345")
-                .agent_id(new Long(1234L))
-                .obj_id(new Long(1000L))
-                .user_id(new Long(20000L))
+                .agent_id(new Long(1L))
+                .obj_id(new Long(1L))
+                .user_id(new Long(1L))
                 .end_d("20200312")
                 .auction_amount(new Long(1000000L))
                 .build()

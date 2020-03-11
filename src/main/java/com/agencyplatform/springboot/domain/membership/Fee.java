@@ -4,7 +4,6 @@ import com.agencyplatform.springboot.domain.RegModTimeEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
 
 import javax.persistence.*;
 
@@ -12,6 +11,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @IdClass(FeePK.class)
 @Entity
+@Table(name="AG_LAW_FEE")
 public class Fee extends RegModTimeEntity {
     @Id
     @Column(name = "CLASSIFY_T")

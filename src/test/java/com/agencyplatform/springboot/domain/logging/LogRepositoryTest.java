@@ -18,10 +18,10 @@ public class LogRepositoryTest {
     @Autowired
     LogRepository logRepository;
 
-    @After
-    public void cleanup(){
-        logRepository.deleteAll();
-    }
+//    @After
+//    public void cleanup(){
+//        logRepository.deleteAll();
+//    }
 
     @Test
     public void log_jpa_test() throws Exception {
@@ -29,7 +29,7 @@ public class LogRepositoryTest {
                 .log_dd("11")
                 .service_date("20200311")
                 .service_time("121222")
-                .id(new Long(1234))
+                .id(new Long(1))
                 .role(Role.USER)
                 .service_no(10)
                 .build()
