@@ -1,7 +1,7 @@
 package com.agencyplatform.springboot.config.auth.dto;
 
-import com.jojoldu.book.springboot.domain.user.Role;
-import com.jojoldu.book.springboot.domain.user.User;
+import com.agencyplatform.springboot.domain.user.Role;
+import com.agencyplatform.springboot.domain.user.User;
 import lombok.Builder;
 import lombok.Getter;
 
@@ -13,10 +13,10 @@ public class OAuthAttributes {
     private String nameAttributeKey;
     private String name;
     private String email;
-    private String picture;
+    private byte[] picture;
 
     @Builder
-    public OAuthAttributes(Map<String, Object> attributes, String nameAttributeKey, String name, String email, String picture){
+    public OAuthAttributes(Map<String, Object> attributes, String nameAttributeKey, String name, String email, byte[] picture){
         this.attributes = attributes;
         this.nameAttributeKey = nameAttributeKey;
         this.name = name;
@@ -36,7 +36,7 @@ public class OAuthAttributes {
         return OAuthAttributes.builder()
                 .name((String) attributes.get("name"))
                 .email((String) attributes.get("email"))
-                .picture((String) attributes.get("picture"))
+                .picture((byte[]) attributes.get("picture"))
                 .attributes(attributes)
                 .nameAttributeKey(userNameAttributeName)
                 .build();
@@ -48,7 +48,7 @@ public class OAuthAttributes {
         return OAuthAttributes.builder()
                 .name((String) response.get("name"))
                 .email((String) response.get("email"))
-                .picture((String) response.get("profileImage"))
+                .picture((byte[]) response.get("profileImage"))
                 .attributes(response)
                 .nameAttributeKey(userNameAttributeName)
                 .build();

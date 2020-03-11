@@ -1,6 +1,6 @@
 package com.agencyplatform.springboot.domain.user;
 
-import com.agencyplatform.springboot.domain.BaseTimeEntity;
+import com.agencyplatform.springboot.domain.RegModTimeEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -10,7 +10,7 @@ import javax.persistence.*;
 @Getter
 @NoArgsConstructor
 @Entity
-public class User extends BaseTimeEntity {
+public class User extends RegModTimeEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -44,7 +44,7 @@ public class User extends BaseTimeEntity {
         this.role = role;
     }
 
-    public User update(String name, String email, String mobile, String password, byte[] picture) {
+    public User update(String name, byte[] picture) {
         this.name = name;
         this.email = email;
         this.mobile = mobile;

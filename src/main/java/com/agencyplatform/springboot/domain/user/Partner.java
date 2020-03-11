@@ -1,18 +1,22 @@
 package com.agencyplatform.springboot.domain.user;
 
-import com.agencyplatform.springboot.domain.BaseTimeEntity;
+import com.agencyplatform.springboot.domain.RegModTimeEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 
 import javax.persistence.*;
 
 @Getter
 @NoArgsConstructor
 @Entity
-public class Partner extends BaseTimeEntity {
+public class Partner extends RegModTimeEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(nullable = false)
+    private String compnum;
+
+    @Column(nullable = false)
     private Long id;
 
     @Column(nullable = false)
@@ -57,15 +61,13 @@ public class Partner extends BaseTimeEntity {
     @Column(nullable = true)
     private byte[] license;
 
-    @Enumerated(EnumType.STRING) // DB 저장시 Enum 값을 스트링으로 저장 (기본 : int)
-    @Column(nullable = false)
-    private Role role;
-
     @Builder
-    public Partner(String name, String email, String password, String mobile, String phone, String fax,
-                   String addr1_1, String addr1_2, String addr1_3,
-                   String addr2_1, String addr2_2, String addr3_1, String addr3_2,
-                   byte[] license, Role role) {
+    public Partner(String compnum, Long id, String name, String email, String password, String mobile, String phone, String fax,
+                          String addr1_1, String addr1_2, String addr1_3,
+                          String addr2_1, String addr2_2, String addr3_1, String addr3_2,
+                          byte[] license) {
+        this.compnum = compnum;
+        this.id = id;
         this.name = name;
         this.email = email;
         this.password = password;
@@ -80,13 +82,14 @@ public class Partner extends BaseTimeEntity {
         this.addr3_1 = addr3_1;
         this.addr3_2 = addr3_2;
         this.license = license;
-        this.role = role;
     }
 
-    public Partner update(String name, String email, String password, String mobile, String phone, String fax,
-                          String addr1_1, String addr1_2, String addr1_3,
-                          String addr2_1, String addr2_2, String addr3_1, String addr3_2,
-                          byte[] license) {
+    public Partner update(String compnum, Long id, String name, String email, String password, String mobile, String phone, String fax,
+                   String addr1_1, String addr1_2, String addr1_3,
+                   String addr2_1, String addr2_2, String addr3_1, String addr3_2,
+                   byte[] license, Role role) {
+        this.compnum = compnum;
+        this.id = id;
         this.name = name;
         this.email = email;
         this.password = password;
@@ -103,9 +106,5 @@ public class Partner extends BaseTimeEntity {
         this.license = license;
 
         return this;
-    }
-
-    public String getRoleKey(){
-        return this.role.getKey();
     }
 }
