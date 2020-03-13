@@ -32,7 +32,7 @@ public class UserRepositoryTest {
                 .name("name")
                 .email("email")
                 .mobile("mobile")
-                .picture("picture".getBytes())
+                .picture("picture")
                 .role(Role.PARTNER)
                 .build()
         );

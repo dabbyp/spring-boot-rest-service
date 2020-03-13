@@ -19,37 +19,37 @@ public class Partner extends RegModTimeEntity {
     @Column(nullable = false)
     private Long id;
 
-    @Column(nullable = false)
+    @Column(nullable = true)
     private String name;
 
-    @Column(nullable = false)
+    @Column(nullable = true)
     private String email;
 
     @Column(nullable = true)
     private String password;
 
-    @Column(nullable = false)
+    @Column(nullable = true)
     private String mobile;
 
     @Column(nullable = true)
     private String phone;
 
-    @Column(nullable = false)
+    @Column(nullable = true)
     private String fax;
 
-    @Column(nullable = false)
+    @Column(nullable = true)
     private String addr1_1;
 
-    @Column(nullable = false)
+    @Column(nullable = true)
     private String addr1_2;
 
-    @Column(nullable = false)
+    @Column(nullable = true)
     private String addr1_3;
 
-    @Column(nullable = false)
+    @Column(nullable = true)
     private String addr2_1;
 
-    @Column(nullable = false)
+    @Column(nullable = true)
     private String addr2_2;
 
     @Column(nullable = true)
@@ -59,13 +59,13 @@ public class Partner extends RegModTimeEntity {
     private String addr3_2;
 
     @Column(nullable = true)
-    private byte[] license;
+    private String license;
 
     @Builder
     public Partner(String compnum, Long id, String name, String email, String password, String mobile, String phone, String fax,
                           String addr1_1, String addr1_2, String addr1_3,
                           String addr2_1, String addr2_2, String addr3_1, String addr3_2,
-                          byte[] license) {
+                          String license) {
         this.compnum = compnum;
         this.id = id;
         this.name = name;
@@ -87,7 +87,7 @@ public class Partner extends RegModTimeEntity {
     public Partner update(String compnum, Long id, String name, String email, String password, String mobile, String phone, String fax,
                    String addr1_1, String addr1_2, String addr1_3,
                    String addr2_1, String addr2_2, String addr3_1, String addr3_2,
-                   byte[] license, Role role) {
+                   String license, Role role) {
         this.compnum = compnum;
         this.id = id;
         this.name = name;

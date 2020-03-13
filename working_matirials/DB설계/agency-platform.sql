@@ -6,7 +6,7 @@ CREATE TABLE AG_USER (
 	NAME	varchar(64)	NOT NULL,
 	EMAIL	varchar(128)	NULL,
 	MOBILE	varchar(32)	NULL,
-	PICTURE	BLOB	NULL,
+	PICTURE	varchar(512) NULL,
 	ROLE	varchar(16)	NULL,
 	REG_DATE	datetime	NULL,
 	MOD_DATE	datetime	NULL
@@ -29,7 +29,7 @@ CREATE TABLE AG_LAW_PARTNER (
 	ADDR2_2	varchar(64)	NULL,
 	ADDR3_1	varchar(32)	NULL,
 	ADDR3_2	varchar(64)	NULL,
-	LICENSE	BLOB	NULL,
+	LICENSE	varchar(512)	NULL,
 	REG_DATE	datetime	NULL,
 	MOD_DATE	datetime	NULL,
     FOREIGN KEY(ID) references AG_USER(ID)

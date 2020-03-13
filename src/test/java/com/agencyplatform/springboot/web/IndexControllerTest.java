@@ -3,26 +3,23 @@ package com.agencyplatform.springboot.web;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.test.context.junit4.SpringRunner;
-import org.springframework.test.web.servlet.MockMvc;
 
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.RANDOM_PORT;
 
 @RunWith(SpringRunner.class)
-@WebMvcTest
+@SpringBootTest(webEnvironment = RANDOM_PORT)
 public class IndexControllerTest {
     @Autowired
-    private MockMvc mvc;
+    private TestRestTemplate restTemplate;
 
     @Test
-    public void index_return() throws Exception {
-        String strIndex = "index";
+    public void mainPage_loading(){
+        String body = this.restTemplate.getForObject("/", String.class);
 
-        mvc.perform(get("/"))
-                .andExpect(status().isOk())
-                .andExpect(content().string(strIndex));
+        assertThat(body).contains("스프링 부트로 시작하는 웹 서비스");
     }
 }

@@ -19,24 +19,24 @@ public class User extends RegModTimeEntity {
     @Column(nullable = false)
     private String name;
 
-    @Column(nullable = false)
+    @Column(nullable = true)
     private String email;
 
-    @Column(nullable = false)
+    @Column(nullable = true)
     private String mobile;
 
     @Column(nullable = true)
     private String password;
 
     @Column(nullable = true)
-    private byte[] picture;
+    private String picture;
 
     @Enumerated(EnumType.STRING) // DB 저장시 Enum 값을 스트링으로 저장 (기본 : int)
-    @Column(nullable = false)
+    @Column(nullable = true)
     private Role role;
 
     @Builder
-    public User(String name, String email, String mobile, String password, byte[] picture, Role role) {
+    public User(String name, String email, String mobile, String password, String picture, Role role) {
         this.name = name;
         this.email = email;
         this.mobile = mobile;
@@ -45,7 +45,7 @@ public class User extends RegModTimeEntity {
         this.role = role;
     }
 
-    public User update(String name, byte[] picture) {
+    public User update(String name, String picture) {
         this.name = name;
         this.email = email;
         this.mobile = mobile;
