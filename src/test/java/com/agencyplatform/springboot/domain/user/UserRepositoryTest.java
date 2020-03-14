@@ -25,8 +25,6 @@ public class UserRepositoryTest {
 
     @Test
     public void user_jpa_test() throws Exception {
-        String strIndex = "index";
-
         userRepository.save(User.builder()
                 .password("1234")
                 .name("name")

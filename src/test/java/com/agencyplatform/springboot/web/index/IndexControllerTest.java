@@ -19,6 +19,6 @@ public class IndexControllerTest {
     @Test
     public void mainPage_loading(){
         String body = this.restTemplate.getForObject("/", String.class);
-        assertThat(body).contains("AGENCY-PLATFORM-SERVICE");
+        assertThat(body).contains("AGENCY");
     }
 }
