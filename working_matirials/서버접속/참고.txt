@@ -33,3 +33,13 @@ spring.datasource.driver-class-name=org.mariadb.jdbc.Driver
 JVM_OPTION="-Dspring.config.location=classpath:/application.properties,/home/ec2-user/app/step1/application-real-db.properties,/home/ec2-user/app/step1/application-oauth.properties -Dspring.profiles.active=real"
 nohup java -jar ${JVM_OPTION} $REPOSITORY/libs/$JAR_NAME 2>&1 &
 
+--------------------------------------------------------------------------------------
+
+CI/CD
+-----
+1.Travis 등록
+[settings - Environment Variable]
+AWS_ACCESS_KEY :
+AKIA4NLH6Q46GUVHN623
+AWS_SECRET_KEY :
+U4l0L8vII+4t5MFzT78LMUUsa2imkLCcDsLjbNumXfU=
