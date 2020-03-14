@@ -1,3 +1,5 @@
+# AWS ACCESS KEY  유출사고로 Travis 연동은 잠정 중단
+
 language: java
 jdk:
   - openjdk8
