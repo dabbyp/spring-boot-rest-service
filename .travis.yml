@@ -7,6 +7,9 @@ branches:
     - master
 
 #Travis CI server's Home
+before_install:
+  - chomod +x gradlew
+
 cache:
   directories:
     - '$HOME/.m2/repository'
