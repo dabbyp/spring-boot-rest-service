@@ -28,8 +28,8 @@ deploy:
     bucket: agencyplatform-service-build # S3 버킷
     region: ap-northeast-2
     skip_cleanup: true
-    acl: private # zip 파일 접근을 private으로
-                 #(public_read_write # private, public_read, public_read_write, authenticated_read, bucket_owner_read, bucket_owner_full_control. ACL의 기본값은 private) local_dir: deploy # before_deploy에서 생성한 디렉토리
+    acl: public_read_write # zip 파일 접근을 private으로
+                 #(private, public_read, public_read_write, authenticated_read, bucket_owner_read, bucket_owner_full_control. ACL의 기본값은 private) local_dir: deploy # before_deploy에서 생성한 디렉토리
     wait-until-deployed: true
 
 #CI 실행완료 시 메일로 알람
