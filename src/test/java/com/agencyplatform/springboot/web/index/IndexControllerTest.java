@@ -19,7 +19,6 @@ public class IndexControllerTest {
     @Test
     public void mainPage_loading(){
         String body = this.restTemplate.getForObject("/", String.class);
-
-        assertThat(body).contains("스프링 부트로 시작하는 웹 서비스");
+        assertThat(body).contains("AGENCY-PLATFORM-SERVICE");
     }
 }
