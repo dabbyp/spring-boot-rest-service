@@ -1,6 +1,7 @@
 package com.agencyplatform.springboot.domain.user;
 
 import com.agencyplatform.springboot.domain.RegModTimeEntity;
+import com.agencyplatform.springboot.service.dashboard.DashboardResponseDto;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

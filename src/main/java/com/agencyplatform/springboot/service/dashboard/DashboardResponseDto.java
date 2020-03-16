@@ -2,15 +2,16 @@ package com.agencyplatform.springboot.service.dashboard;
 
 import lombok.Getter;
 
+import java.math.BigInteger;
+
 @Getter
 public class DashboardResponseDto {
-    private Long userCount;
-    private Long partnerCount;
-    private Long userLoginRatio;
-    private Long partnerLoginRatio;
+    private BigInteger userCount;
+    private BigInteger partnerCount;
+    private BigInteger userLoginRatio;
+    private BigInteger partnerLoginRatio;
 
-
-    public DashboardResponseDto(Long userCount, Long partnerCount, Long userLoginRatio, Long partnerLoginRatio){
+    public DashboardResponseDto(BigInteger userCount, BigInteger partnerCount, BigInteger userLoginRatio, BigInteger partnerLoginRatio){
         this.userCount = userCount;
         this.partnerCount = partnerCount;
         this.userLoginRatio = userLoginRatio;

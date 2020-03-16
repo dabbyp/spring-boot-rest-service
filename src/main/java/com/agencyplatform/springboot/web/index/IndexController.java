@@ -22,7 +22,7 @@ public class IndexController {
             model.addAttribute("userEmail", user.getName() + "(" + user.getEmail() + ")" );
             model.addAttribute("userPicture", user.getPicture() );
             model.addAttribute("todayDate", LocalDate.now().format(DateTimeFormatter.BASIC_ISO_DATE));
-            //model.addAttribute("dashboardInfo", dashboardService.getDashboardInfo());
+            model.addAttribute("dashboardInfo", dashboardService.getDashboardInfo());
         }
         return "index";
     }
